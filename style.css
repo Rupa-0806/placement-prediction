@@ -1,0 +1,84 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background with soft gradient */
+body.login-light {
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7, #f3e5f5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Container with floating animation */
+.container {
+  perspective: 1000px;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Card with 3D effect */
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 320px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+
+/* Title */
+.card h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #4a148c;
+}
+
+/* Input styling */
+.form-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 2px solid #d1c4e9;
+  background: #f3e5f5;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form-box input:focus {
+  border-color: #7e57c2;
+  background: #ede7f6;
+  outline: none;
+  box-shadow: 0 0 10px rgba(126,87,194,0.5);
+  transform: scale(1.02);
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #7e57c2, #ab47bc);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ab47bc, #7e57c2);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(171,71,188,0.4);
+}
+

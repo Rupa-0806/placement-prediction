@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Details | Placement Prediction</title>
+  <link rel="stylesheet" href="details.css">
+   
+</head>
+<body class="details-bg">
+  <header>
+    <h1>Student Details</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="details.html">Details</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </header>
+
+  <div class="form-container">
+    <form id="studentForm" class="form-box">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="qualification" placeholder="Qualification (e.g. B.Tech CSE)" required>
+      <input type="number" id="percentage" placeholder="Percentage / CGPA" required>
+      <input type="text" id="skills" placeholder="Skills (e.g. Java, Python, AI)" required>
+      <input type="file" id="resume" accept=".pdf,.doc,.docx" required>
+      <button type="submit">Submit Details</button>
+    </form>
+  </div>
+
+  <!-- Result -->
+  <div id="result"></div>
+
+  <script>
+    document.getElementById("studentForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // stop page reload
+
+      let percentage = parseFloat(document.getElementById("percentage").value);
+      let skills = document.getElementById("skills").value.toLowerCase();
+
+      // Simple logic for placement prediction
+      let placed = false;
+
+      if (percentage >= 70 && (skills.includes("java") || skills.includes("python") || skills.includes("ai"))) {
+        placed = true;
+      }
+
+      // Show result
+      let resultBox = document.getElementById("result");
+      if (placed) {
+        resultBox.innerHTML = "🎉 Congratulations! You are likely to get Placed.";
+        resultBox.style.color = "lime";
+      } else {
+        resultBox.innerHTML = "⚠️ Based on your details, placement chances are low. Keep improving!";
+        resultBox.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
